@@ -1,0 +1,315 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Social Media icon */
+.social-icons a i {
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a i:hover {
+  transform: scale(1.3); /* Increases size by 30% */
+}
+
+/* Navbar hover effect */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Make sure it's above all elements */
+  background: linear-gradient(90deg, rgb(14, 12, 80), #2d2c61, #21358f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s infinite alternate;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Hover Effect */
+.navbar:hover {
+  background: linear-gradient(90deg, #1e38ac, #3f3322, #1e38ac);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/*hover*/
+.navbar-nav .nav-link {
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  text-shadow: #e9ebf0 1px 1px 1px;
+  color: solid #f7f5f3; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+
+/* Dropdown Menu */
+.dropdown-link {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  transition: color .15sease-in-out, background-color .15sease-in-out, border-color .15sease-in-out;
+}
+
+.dropdown-link:hover {
+  color: #f39c12; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: linear-gradient(to left, #849ED1, #FFFFFF);;
+  top: 40px;
+  left: 0;
+  width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu li a {
+  color: black;
+}
+/* Apply hover effect to dropdown menu items */
+.dropdown-menu li a {
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  padding: 10px 15px; /* Ensure padding for better appearance */
+  display: block; /* Ensure full width clickable */
+  color: black; /* Default color */
+}
+
+.dropdown-menu li a:hover {
+  color: #f39c12; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  background-color: rgba(0, 0, 0, 0.1); /* Light background effect */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Middle Section */
+/* Middle Section Styling */
+.middle-section {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #6b88c7, #ffffff);
+  animation: gradientShift 5s infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(135deg, #6b88c7, #ffffff);
+  }
+  100% {
+    background: linear-gradient(135deg, #4f6ca7, #dfe9f3);
+  }
+}
+
+/* Floating Animated Circles for Background */
+.middle-section::before,
+.middle-section::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: float 6s infinite alternate ease-in-out;
+}
+
+.middle-section::before {
+  top: 10%;
+  left: 20%;
+  animation-duration: 8s;
+}
+
+.middle-section::after {
+  bottom: 10%;
+  right: 20%;
+  animation-duration: 10s;
+}
+
+/* Floating Effect for Background Elements */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Heading Animation */
+.middle-section h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease-in-out, floatText 3s infinite alternate ease-in-out;
+}
+
+/* Floating Heading Effect */
+@keyframes floatText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Fade-In Effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Lead Text */
+.middle-section p {
+  font-size: 1.2rem;
+  color: #555;
+  opacity: 0.8;
+  animation: fadeIn 1.8s ease-in-out;
+}
+
+/* Animated Button */
+.middle-section .btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #6b88c7;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Effect */
+.middle-section .btn:hover {
+  background: #4f6ca7;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Click Effect */
+.middle-section .btn:active {
+  transform: scale(0.95);
+}
+
+/* Middle1 Section */
+.middle1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 10px;
+  color: #e9ebf0;
+  text-align: center;
+  background: linear-gradient(to right, #3b5998, #2d4373); /* Beautiful gradient */
+}
+
+.feature-box {
+  width: 40%;
+  padding: 20px;
+  border-top: 3px solid #6b88c7; /* Blue Border */
+  font-size: 18px;
+}
+
+.feature-box:hover{
+  color: #f39c12; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  }
+
+/* Call to Action */
+.cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #3b5998, #2d4373); /* Beautiful gradient */
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.purchase-btn {
+  background: #ff9800; /* Bright orange */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.purchase-btn:hover {
+  background: #e68900; /* Darker shade of orange */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu ul {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .middle {
+      flex-direction: column;
+  }
+
+  .feature-box {
+      width: 90%;
+  }
+}
